@@ -88,7 +88,12 @@ function Home() {
     );
   };
   
+
   const scrollToSection = (section) => {
+    if (section === '') {
+      const projectsSection = document.querySelector('.description');
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
     navigate(`/${section}`);
   };
 
@@ -104,7 +109,7 @@ function Home() {
         <button onClick={() => scrollToSection('projects')}>
           Projects
         </button>
-        <button onClick={() => scrollToSection('home')}>
+        <button onClick={() => scrollToSection('')}>
           Home
         </button>
         <span className="text">Brendon Uzoigwe</span>
@@ -268,8 +273,7 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Home />} />
         <Route path="/about-me" element={<Home />} />
         <Route path="/contact-me" element={<Home />} />
