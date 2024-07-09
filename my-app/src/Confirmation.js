@@ -6,7 +6,7 @@ function Confirmation() {
         <div className="App2">
             <h2>Thank you for contacting me!</h2>
             <p>Your message has been sent successfully.</p>
-            <Link to="/home">Go back to Home</Link>
+            <Link to="/">Go back to Home</Link>
             <div>
             <img src={process.env.PUBLIC_URL + '/mail.webp'} alt="Mail"/>             
             </div>
